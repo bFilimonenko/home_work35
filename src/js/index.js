@@ -11,13 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
   updateTaskList();
 });
 
-// ✅ Add or Update Task
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const title = nameInput.value.trim();
   const category = categoryInput.value.trim();
-  const time = timeInput.value.trim();
+  const time = timeInput.value;
   const difficulty = difficultyInput.value;
 
   if (!title || !category || !time || !difficulty) {
@@ -38,7 +37,6 @@ form.addEventListener("submit", (event) => {
   form.reset();
 });
 
-// ✅ Update Task List
 function updateTaskList() {
 
   taskList.innerHTML = "";
@@ -62,11 +60,8 @@ function updateTaskList() {
   }
 }
 
-// ✅ Edit & Delete Task
 taskList.addEventListener("click", (event) => {
-  // const target = event.target;
   const title = event.target.parentElement.dataset.title;
-  console.dir(event.target);
 
   if (event.target.classList.contains("edit-btn")) {
     const task = scheduleOfTasks.findTask(title);
