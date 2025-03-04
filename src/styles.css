@@ -1,76 +1,127 @@
-/*body {*/
-/*    font-family: Arial, sans-serif;*/
-/*    background-color: #f4f4f4;*/
-/*    text-align: center;*/
-/*}*/
-/*.container {*/
-/*    width: 60%;*/
-/*    margin: auto;*/
-/*    background: white;*/
-/*    padding: 20px;*/
-/*    border-radius: 5px;*/
-/*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
-/*}*/
-/*form {*/
-/*    margin-bottom: 20px;*/
-/*}*/
-/*input {*/
-/*    margin: 5px;*/
-/*    padding: 10px;*/
-/*    width: 80%;*/
-/*}*/
-/*button {*/
-/*    padding: 10px 20px;*/
-/*    background: #28a745;*/
-/*    color: white;*/
-/*    border: none;*/
-/*    cursor: pointer;*/
-/*}*/
-/*ul {*/
-/*    list-style: none;*/
-/*    padding: 0;*/
-/*}*/
-/*li {*/
-/*    background: #ddd;*/
-/*    margin: 5px;*/
-/*    padding: 10px;*/
-/*}*/
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
     background-color: #f4f4f4;
     text-align: center;
 }
+
 .container {
     width: 60%;
-    margin: auto;
+    margin: 15px auto;
     background: white;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+.container h1 {
+    margin-bottom: 10px;
+}
+
 form {
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
-input {
-    margin: 5px;
+
+form > input {
     padding: 10px;
     width: 80%;
 }
+
+form div.task-difficulty {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 80%;
+}
+
+form div.task-difficulty span {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+form div.task-difficulty label {
+    margin-right: 15px;
+}
+
+form div.task-difficulty input[type='radio'] {
+    width: 18px;
+    height: 18px;
+    appearance: none;
+    background-color: #e6e6e6;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #e6e6e6 inset;
+
+    &:checked {
+        border-width: 1px;
+
+        &:nth-child(2) {
+            background-color: green;
+        }
+
+        &:nth-child(4) {
+            background-color: yellow;
+        }
+
+        &:nth-child(6) {
+            background-color: red;
+        }
+    }
+}
+
+
 button {
+    margin-top: 10px;
     padding: 10px 20px;
     background: #28a745;
     color: white;
     border: none;
     cursor: pointer;
 }
+
 ul {
     list-style: none;
     padding: 0;
+    color: gray;
 }
+
 li {
     background: #ddd;
     margin: 5px;
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+
+li.easy {
+    background-color: rgba(0, 255, 0, 0.5);
+}
+
+li.medium {
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+li.hard {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+li > div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
 }

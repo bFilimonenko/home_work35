@@ -4,19 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Schedule of tasks</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="container">
   <h1>Schedule of tasks</h1>
   <form id="task-form">
-    <input type="text" id="task-name" placeholder="Task Name" required>
-    <input type="text" id="task-category" placeholder="Category" required>
-    <input type="number" id="task-time" placeholder="Time" required>
-    <input type="number" id="task-difficulty" placeholder="Difficulty" required>
-    <br>
-    <button type="submit">Add Task</button>
+    <input type="text" id="task-name" placeholder="Task Name">
+    <input type="text" id="task-category" placeholder="Category">
+    <input type="time" id="task-time" placeholder="Time">
+    <div class="task-difficulty">
+      <span>Difficulty:</span>
+      <input type="radio" name="taskDifficulty" id="easy" value="easy">
+      <label for="easy">Easy</label>
+      <input type="radio" name="taskDifficulty" id="medium" value="medium">
+      <label for="medium">Medium</label>
+      <input type="radio" name="taskDifficulty" id="hard" value="hard">
+      <label for="hard">Hard</label>
+    </div>
+    <button type="submit" class="add">Add Task</button>
+    <button type="submit" class="save hidden">Save Changes</button>
   </form>
   <h2>Your tasks</h2>
   <ul id="task-list"></ul>
